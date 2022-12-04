@@ -1,0 +1,378 @@
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords"
+        content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, AdminWrap lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, AdminWrap lite design, AdminWrap lite dashboard bootstrap 5 dashboard template">
+    <meta name="description"
+        content="AdminWrap Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Quản lý bán hàng Châu Tiến</title>
+    <link rel="canonical" href="https://www.wrappixel.com/templates/adminwrap-lite/" />
+   
+    <link rel="shortcut icon" type="image/x-icon" href="./logo-main.ico" />
+ 
+    <link href="./assets/node_modules/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./assets/node_modules/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet">
+   
+    <link href="./assets/node_modules/morrisjs/morris.css" rel="stylesheet">
+  
+    <link href="./assets/node_modules/c3-master/c3.min.css" rel="stylesheet">
+   
+    <link href="css/style.css" rel="stylesheet">
+   
+    <link href="css/pages/dashboard1.css" rel="stylesheet">
+   
+    <link href="css/colors/default.css" id="theme" rel="stylesheet">
+    
+</head>
+
+<body class="fix-header fix-sidebar card-no-border">
+   
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader__figure"></div>
+            <p class="loader__label">Admin Wrap</p>
+        </div>
+    </div>
+   
+    <div id="main-wrapper">
+        
+        <header class="topbar">
+            <nav class="navbar top-navbar navbar-expand-md navbar-light">
+                
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">
+                        <b>
+                            
+                            <img src="./assets/images/logo-main.png" alt="homepage" class="dark-logo" />
+                           
+                            <img src="./assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
+                        </b>
+                       
+                        <span>
+                            
+                            <img src="./assets/images/logo-text.png" alt="homepage" class="dark-logo" />
+                            
+                            <img src="./assets/images/logo-light-text.png" class="light-logo" alt="homepage" /></span>
+                    </a>
+                </div>
+                
+                <div class="navbar-collapse">
+                    
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up waves-effect waves-dark"
+                                href="javascript:void(0)"><i class="fa fa-bars"></i></a> </li>
+                      
+                        
+                    </ul>
+                    
+                    <ul class="navbar-nav my-lg-0">
+                       
+                        <li class="nav-item dropdown u-pro">
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="#"
+                                id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img
+                                    src="./assets/images/users/1.jpg" alt="user" class="" /> <span
+                                    class="hidden-md-down">Bách hóa Châu Tiến &nbsp;</span> </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown"></ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        
+        <aside class="left-sidebar">
+            
+            <div class="scroll-sidebar">
+              
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <li> <a class="waves-effect waves-dark" href="index.html" aria-expanded="false"><i
+                                    class="fa fa-smile-o"></i><span class="hide-menu">Trang Chủ</span></a>
+                        </li>
+                        <li> <a class="waves-effect waves-dark" href="pages-profile.html" aria-expanded="false"><i
+                                    class="fa fa-user-circle-o"></i><span class="hide-menu">Bán Hàng</span></a>
+                        </li>
+                        <li> <a class="waves-effect waves-dark" href="table-basic.html" aria-expanded="false"><i
+                                    class="fa fa-table"></i><span class="hide-menu">Nhập Hàng</span></a>
+                        </li>
+                        <li> <a class="waves-effect waves-dark" href="icon-fontawesome.html" aria-expanded="false"><i
+                                    class="fa fa-tachometer"></i><span class="hide-menu">Thống Kê</span></a>
+                        </li>
+                    </ul>
+                </nav>
+                
+            </div>
+            
+        </aside>
+      
+        <div class="page-wrapper">
+            
+            <div class="container-fluid">
+                
+                <div class="row page-titles">
+                    <div class="col-md-5 align-self-center">
+                        <h3 class="text-themecolor">Thống Kê</h3>
+                        
+                    </div>
+                    
+                </div>
+               <div class="row justify-content-start">
+                <div class="col-md-3">
+                    <a href="table-basic.html"
+                        class="btn waves-effect waves-light btn btn-info pull-right hidden-sm-down text-white"> Tạo đơn nhập</a>
+                </div>
+                <div class="col-md-3">
+                    <button onclick="printOrder()"
+                        class="btn waves-effect waves-light btn btn-info pull-right hidden-sm-down text-white"> In phiếu </button>
+                </div>
+                <div class="col-md-3"></div>
+                <div class="col-md-3"></div>
+               </div>
+                <div class="row">
+                    <!-- Column -->
+                    <div class="col-lg-8">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex no-block">
+                                    <div>
+                                        <h5 class="card-title mb-0">Doanh Thu</h5>
+                                    </div>
+                                    <div class="ms-auto">
+                                        <ul class="list-inline text-center font-12">
+                                            <li><i class="fa fa-circle text-success"></i> VỐN</li>
+                                            <li><i class="fa fa-circle text-info"></i> LỖ</li>
+                                            <li><i class="fa fa-circle text-primary"></i> LỜI</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="" id="sales-chart" style="height: 355px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                <div class="row">
+                    <!-- Column -->
+                    <div class="col-lg-8 d-flex align-items-stretch">
+                        <div class="card w-100">
+                            <div class="card-body">
+                                <div class="d-flex">
+                                    <div>
+                                        <h5 class="card-title">Thống kê hàng nhập</h5>
+                                    </div>
+                                    <div class="ms-auto">
+                                        <select class="form-select b-0">
+                                            <option selected="">Tháng 1</option>
+                                            <option value="1">Tháng 2</option>
+                                            <option value="2">Tháng 3</option>
+                                            <option value="3">Tháng 4</option>
+                                            <option value="3">Tháng 5</option>
+                                            <option value="3">Tháng 6</option>
+                                            <option value="3">Tháng 7</option>
+                                            <option value="3">Tháng 8</option>
+                                            <option value="3">Tháng 9</option>
+                                            <option value="3">Tháng 10</option>
+                                            <option value="3">Tháng 11</option>
+                                            <option value="3">Tháng 12</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="table-responsive mt-3 no-wrap">
+                                    <table class="table vm no-th-brd pro-of-month">
+                                        <thead>
+                                            <tr>
+                                                <th colspan="1">Tên</th>
+                                                <th>Mã sản phẩm</th>
+                                                <th>Giá</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                
+                                                <td>
+                                                    <h6>Nước rửa chén</h6>
+                                                </td>
+                                                <td>ABC123</td>
+                                                <td>27.000</td>
+                                            </tr>
+                                            <tr class="active">
+                                                
+                                                <td>
+                                                    <h6>Bia Larue</h6>
+                                                </td>
+                                                <td>ABC124</td>
+                                                <td>149.000</td>
+                                            </tr>
+                                            <tr>
+                                               
+                                                <td>
+                                                    <h6>Mì tôm Hảo Hảo</h6>
+                                                </td>
+                                                <td>ABC125</td>
+                                                <td>78.000</td>
+                                            </tr>
+                                            <tr>
+                                                
+                                                <td>
+                                                    <h6>Bò húc</h6>
+                                                </td>
+                                                <td>ABC126</td>
+                                                <td>100.000</td>
+                                            </tr>
+                                            <tr>
+                                                
+                                                <td>
+                                                    <h6>Bánh chocopie</h6>
+                                                </td>
+                                                <td>ABC127</td>
+                                                <td>69.000</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                </div>
+               
+                <div class="row">
+                    
+                    <div class="col-lg-6 col-md-12">
+                        <div class="card card-body mailbox">
+
+                            <h5 class="card-title">Thống kê hàng tồn</h5>
+                            <div class="ms-auto">
+                                <select class="form-select b-0">
+                                    <option selected="">Hôm nay</option>
+                                    <option value="1">Hôm qua</option>
+                                </select>
+                            </div>
+                            <div class="message-center" style="height: 420px !important;">
+                                
+                                <a>
+                                    
+                                    <div class="mail-contnet">
+                                        <h6 class="text-dark font-medium mb-0">Hạt nêm Maogi</h6> <span class="mail-desc">Tồn kho: 12</span>
+                                        <span>Giá: 24.000/1</span>
+                                    </div>
+                                </a>
+                                
+                                <a>
+                                    
+                                    <div class="mail-contnet">
+                                        <h6 class="text-dark font-medium mb-0">Giấy vệ sinh</h6> <span class="mail-desc">Tồn kho: 22</span>
+                                        <span>Giá: 13.000/1</span>
+                                    </div>
+                                </a>
+                               
+                                <a>
+                                    
+                                    <div class="mail-contnet">
+                                        <h6 class="text-dark font-medium mb-0">Mắm ruốc</h6> <span class="mail-desc">Tồn kho: 23</span>
+                                        <span>Giá: 37.000/1</span>
+                                    </div>
+                                </a>
+                                
+                                <a>
+                                    
+                                    <div class="mail-contnet">
+                                        <h6 class="text-dark font-medium mb-0">Sữa tắm L.Boy</h6> <span class="mail-desc">Tồn kho: 7</span>
+                                        <span>Giá: 20.000/1</span> 
+                                    </div>
+                                </a>
+                                
+                                <a>
+                                    
+                                    <div class="mail-contnet">
+                                        <h6 class="text-dark font-medium mb-0">Comfort NG</h6> <span class="mail-desc">Tồn kho: 4</span>
+                                        <span>Giá: 58.000/1</span> 
+                                    </div>
+                                </a>
+                               
+                                <a>
+                                    
+                                    <div class="mail-contnet">
+                                        <h6 class="text-dark font-medium mb-0">Bàn chải P/S</h6> <span class="mail-desc">Tồn kho: 10</span>
+                                        <span>Giá: 10.000/1</span> 
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Hàng bán ra</h5> 
+                                <ul class="feeds">
+                                    <li>
+                                        <div class="bg-light-warning"><i class="fa fa-shopping-cart"></i></div> Cà phê lon <span class="text-muted">SP121</span>
+                                    </li>
+                                    <li>
+                                        <div class="bg-light-warning"><i class="fa fa-shopping-cart"></i></div> Bánh mì ngọt <span class="text-muted">SP122</span>
+                                    </li>
+                                    <li>
+                                        <div class="bg-light-warning"><i class="fa fa-shopping-cart"></i></div> Băng vệ sinh<span class="text-muted">SP123</span>
+                                    </li>
+                                    <li>
+                                        <div class="bg-light-warning"><i class="fa fa-shopping-cart"></i></div> Bàn chải đánh răng<span class="text-muted">SP124</span>
+                                    </li>
+                                    <li>
+                                        <div class="bg-light-warning"><i class="fa fa-shopping-cart""></i></div> Bánh gạo <span class="text-muted">SP125</span>
+                                    </li>
+                                    <li>
+                                        <div class="bg-light-warning"><i class="fa fa-shopping-cart"></i></div> Sữa đặc <span class="text-muted">SP126</span>
+                                    </li>
+                                    <li>
+                                        <div class="bg-light-warning"><i class="fa fa-shopping-cart"></i></div> Sữa tắm L.Boy<span class="text-muted">SP127</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+            <footer class="footer"> © 2022 BachHoaChauTien by <a href="https://www.facebook.com/groups/mis3007nct">46K14.10</a> </footer>
+           
+        </div>
+        
+    </div>
+    
+    <script src="./assets/node_modules/jquery/jquery.min.js"></script>
+    
+    <script src="./assets/node_modules/bootstrap/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="js/perfect-scrollbar.jquery.min.js"></script>
+    
+    <script src="js/waves.js"></script>
+   
+    <script src="js/sidebarmenu.js"></script>
+  
+    <script src="js/custom.min.js"></script>
+   
+    <script src="./assets/node_modules/raphael/raphael-min.js"></script>
+    <script src="./assets/node_modules/morrisjs/morris.min.js"></script>
+    
+    <script src="./assets/node_modules/d3/d3.min.js"></script>
+    <script src="./assets/node_modules/c3-master/c3.min.js"></script>
+   
+    <script src="js/dashboard1.js"></script>
+    <script>
+
+        function printOrder(){
+            alert("In phiếu thành công");
+           
+        } 
+    </script>
+</body>
+
+</html>
